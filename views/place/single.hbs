@@ -1,0 +1,18 @@
+<form method="POST" action="/place/edit/{{ place._id }}">
+  <div id="map-container"></div>
+
+  <label for="place-input">Place Name</label>
+  <input required id="place-input" type="text" name="name" placeholder="Place Name" value="{{ place.name }}">
+
+  <label for="latitude-input">Place Latitude</label>
+  <input required id="latitude-input" type="text" name="latitude" placeholder="Place Latitude" value="{{ place.location.coordinates.[1] }}">
+
+  <label for="longitude-input">Place Longitude</label>
+  <input required id="longitude-input" type="text" name="longitude" placeholder="Place Longitude" value="{{ place.location.coordinates.[0] }}">
+
+  <button>Update Place</button>
+</form>
+
+<form method="POST" action="/place/delete/{{ place._id }}">
+  <button>Delete Place</button>
+</form>
